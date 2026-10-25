@@ -1,0 +1,47 @@
+{
+  "id": "E118",
+  "value": 0.001414213562373095,
+  "value_70_digits": "0.001414213562373094995128736566229722428905771715843804966715769956023436",
+  "method": "Independent Python Decimal (90 working digits, 70-digit report); direct analytical formulas, Decimal square roots/exponentials and argument-reduced Taylor sine. SI decimal spellings are used except explicitly marked exact-binary64 regression fixtures. No JavaScript imports.",
+  "cases": [
+    {
+      "name": "At the waist the radius equals the input minimum",
+      "values": {
+        "distance": 0
+      },
+      "expected": 0.001,
+      "expected_70_digits": "0.001"
+    },
+    {
+      "name": "Propagation is symmetric about the waist",
+      "values": {
+        "distance": -3.141592653589793
+      },
+      "expected": 0.001414213562373095,
+      "expected_70_digits": "0.001414213562373094995128736566229722428905771715843804966715769956023436"
+    },
+    {
+      "name": "Higher refractive index reduces divergence",
+      "values": {
+        "index": 2
+      },
+      "expected": 0.0011180339887498947,
+      "expected_70_digits": "0.001118033988749894831231709077919009955464757254831821253175375722210891"
+    },
+    {
+      "name": "A long propagation distance uses a stable hypotenuse",
+      "values": {
+        "distance": 1e+20
+      },
+      "expected": 3.1830988618379068e+16,
+      "expected_70_digits": "31830988618379067.15377675267450287240690763711135923871572578202869576"
+    },
+    {
+      "name": "A nonparaxial focus is outside this model",
+      "values": {
+        "waist": 1e-06
+      },
+      "throws": true
+    }
+  ]
+}
